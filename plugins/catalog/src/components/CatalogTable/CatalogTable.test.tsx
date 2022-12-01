@@ -298,9 +298,7 @@ describe('CatalogTable component', () => {
         },
       );
 
-      const columnHeader = screen
-        .getAllByRole('button')
-        .filter(c => c.tagName === 'SPAN');
+      const columnHeader = screen.getAllByTestId('mtableheader-sortlabel');
       const columnHeaderLabels = columnHeader.map(c => c.textContent);
       expect(columnHeaderLabels).toEqual(expectedColumns);
     },
@@ -360,9 +358,7 @@ describe('CatalogTable component', () => {
       },
     );
 
-    const columnHeader = screen
-      .getAllByRole('button')
-      .filter(c => c.tagName === 'SPAN');
+    const columnHeader = screen.getAllByTestId('mtableheader-sortlabel');
     const columnHeaderLabels = columnHeader.map(c => c.textContent);
     expect(columnHeaderLabels).toEqual(expectedColumns);
 
